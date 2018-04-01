@@ -373,11 +373,6 @@ gender = {
 		text = "RULE_OPTION_ALL"
 		desc = "RULE_GENDER_ALL_DESC"
 	}
-	option = {
-		name = absolute
-		text = "RULE_GENDER_ABSOLUTE"
-		desc = "RULE_GENDER_ABSOLUTE_DESC"
-	}
 }
 
 supernatural_events = {
