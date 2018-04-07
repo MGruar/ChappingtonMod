@@ -319,7 +319,7 @@ character_event = {
 	
 }
 
-# True cognatic for gender quality rule is now removed.
+# True cognatic for gender equality rule is now removed.
 
 
 

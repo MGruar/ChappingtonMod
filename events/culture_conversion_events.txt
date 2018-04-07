@@ -514,7 +514,7 @@ character_event = {
 			OR = {
 				culture = saxon
 				culture = norman
-				culture = french
+				culture_group = latin
 			}
 			any_province_holding = {
 				NOT = { holding_type = nomad }
@@ -547,7 +547,7 @@ character_event = {
 				OR = {	
 					culture = saxon
 					culture = norman
-					culture = french
+					culture_group = latin
 				}
 				any_province_holding = {
 					NOT = { holding_type = nomad }
@@ -581,7 +581,7 @@ character_event = {
 			OR = {
 				culture = saxon
 				culture = norman
-				culture = french
+				culture_group = latin
 			}
 		}
 	}
@@ -610,7 +610,7 @@ character_event = {
 				OR = {	
 					culture = saxon
 					culture = norman
-					culture = french
+					culture_group = latin
 				}
 			}
 			culture = english
@@ -645,7 +645,7 @@ character_event = {
 			OR = {
 				culture = saxon
 				culture = norman
-				culture = french
+				culture_group = latin
 			}
 		}
 	}
@@ -674,7 +674,7 @@ character_event = {
 				OR = {	
 					culture = saxon
 					culture = norman
-					culture = french
+					culture_group = latin
 				}
 			}
 			culture = english
