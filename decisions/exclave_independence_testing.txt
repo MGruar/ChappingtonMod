@@ -1,128 +1,128 @@
-targetted_decisions = {
-
-
-    exclave_independence_ALL = {
-
-        ai_target_filter = self
-
-        from_potential = {
-            ai = no
-        }
-
-        potential = {
-            is_landed = yes
-            higher_real_tier_than = BARON
-        }
-
-        allow = {
-            is_patrician = no
-            in_revolt = no
-        }
-
-        effect = {
-            hidden_tooltip = {
-                character_event = { id = ExclaveIndependence.100 }  # mark
-                character_event = { id = ExclaveIndependence.200 }  # sweep
-                character_event = { id = ExclaveIndependence.250 }  # clear
-            }
-        }
-
-        ai_will_do = {
-            factor = 0
-        }
-
-    }
-
-
-    exclave_independence_mark = {
-
-        ai_target_filter = self
-
-        from_potential = {
-            ai = no
-        }
-
-        potential = {
-            is_landed = yes
-            higher_real_tier_than = BARON
-        }
-
-        allow = {
-            is_patrician = no
-            in_revolt = no
-        }
-
-        effect = {
-            hidden_tooltip = {
-                character_event = { id = ExclaveIndependence.100 }
-            }
-        }
-
-        ai_will_do = {
-            factor = 0
-        }
-
-    }
-
-
-    exclave_independence_sweep = {
-
-        ai_target_filter = self
-
-        from_potential = {
-            ai = no
-        }
-
-        potential = {
-            is_landed = yes
-            higher_real_tier_than = BARON
-        }
-
-        allow = {
-            is_patrician = no
-            in_revolt = no
-        }
-
-        effect = {
-            hidden_tooltip = {
-                character_event = { id = ExclaveIndependence.200 }
-            }
-        }
-
-        ai_will_do = {
-            factor = 0
-        }
-
-    }
-
-    exclave_independence_clear = {
-
-        ai_target_filter = self
-
-        from_potential = {
-            ai = no
-        }
-
-        potential = {
-            is_landed = yes
-            higher_real_tier_than = BARON
-        }
-
-        effect = {
-            hidden_tooltip = {
-                character_event = { id = ExclaveIndependence.250 }
-            }
-        }
-
-        ai_will_do = {
-            factor = 0
-        }
-
-    }
-
-}
-
-
+#targetted_decisions = {
+#
+#
+#    exclave_independence_ALL = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.100 }  # mark
+#                character_event = { id = ExclaveIndependence.200 }  # sweep
+#                character_event = { id = ExclaveIndependence.250 }  # clear
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#
+#    exclave_independence_mark = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.100 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#
+#    exclave_independence_sweep = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.200 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#    exclave_independence_clear = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.250 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#}
+#
+#
 #decisions = {
 #
 #    ei_all_counts = {
