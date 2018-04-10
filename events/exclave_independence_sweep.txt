@@ -1,0 +1,154 @@
+namespace = ExclaveIndependence
+
+# Sweep
+# (Lose holdings and vassals in unmarked provinces)
+character_event = {
+    id = ExclaveIndependence.200
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+
+        log = "ExclaveIndependence.200"
+
+        # Give out baronies first, to ensure vassal structure is correct for county+barony given away together
+
+        # Give out one demesne title per event, because "create_character" creates identical characters if
+        # used multiple times in an "any_" scope.
+
+        # The "is_capital" check is needed because somehow, "any_demesne_title" includes a province capital barony as a baron-level demesne title
+
+        change_variable = { which = "infloop"  value = 1 }
+
+        log = "[This.GetTitledName] ~~~~ [This.infloop.GetValue]"
+
+        if = {
+            limit = {
+                check_variable = { which = "infloop"  value = 100 }
+            }
+            log = "WTF!"
+            break = yes
+        }
+
+        if = {
+            limit = {
+                any_demesne_title = {
+                    tier = BARON
+                    is_capital = no
+                    location = { NOT = { has_province_flag = ei__marked_province } }
+                }
+            }
+            random_demesne_title = {
+                limit = {
+                    tier = BARON
+                    is_capital = no
+                    location = { NOT = { has_province_flag = ei__marked_province } }
+                }
+                log = "[Root.GetTitledName] loses demesne barony: [This.GetName]"
+                create_character = {
+                    random_traits = yes
+                    dynasty = none
+                    female = no
+                    age = 27
+                }
+                new_character = {
+                    gain_title = PREV
+                    log = "Why hello there, [This.GetTitledName]"
+                }
+            }
+            repeat_event = { id = ExclaveIndependence.200 }
+            break = yes
+        }
+
+        if = {
+            limit = {
+                any_demesne_title = {
+                    tier = COUNT
+                    location = { NOT = { has_province_flag = ei__marked_province } }
+                }
+            }
+            random_demesne_title = {
+                limit = {
+                    tier = COUNT
+                    location = { NOT = { has_province_flag = ei__marked_province } }
+                }
+                log = "[Root.GetTitledName] loses demesne county: [This.GetName]"
+                create_character = {
+                    random_traits = yes
+                    dynasty = none
+                    female = no
+                    age = 29
+                }
+                new_character = {
+                    gain_title = PREV
+                    log = "Why hello there, [This.GetTitledName]"
+                }
+            }
+            repeat_event = { id = ExclaveIndependence.200 }
+            break = yes
+        }
+
+        # Lose disconnected vassals, including those vassals who were created just above
+
+        any_vassal = {
+            limit = {
+                is_landed = yes
+                in_revolt = no
+                NOT = { any_realm_province = { has_province_flag = ei__marked_province } }
+            }
+            log = "[Root.GetTitledName] loses vassal: [This.GetTitledName]"
+
+            character_event = { id = ExclaveIndependence.201 }  # go independent
+        }
+
+        log = "/ExclaveIndependence.200"
+    }
+}
+
+
+# Vassal chooses whether to become independent
+character_event = {
+    id = ExclaveIndependence.201
+    desc = ExclaveIndependence.201.desc
+    picture = GFX_evt_throne_room
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = { liege = { independent = yes } }
+        name = ExclaveIndependence.201.indep
+        set_defacto_liege = THIS
+        recalc_succession = yes
+    }
+
+    option = {
+        trigger = { liege = { independent = no } }
+        name = ExclaveIndependence.201.higher_liege
+        liege = { liege = { ROOT = { set_defacto_liege = PREV } } }
+        # notify heir of old liege, as well as new liege?
+        recalc_succession = yes
+    }
+
+    option = {
+        trigger = { ai = no }
+        name = ExclaveIndependence.201.stay
+        prestige = -10
+    }
+}
+
+
+
+# Clear province markings
+character_event = {
+    id = ExclaveIndependence.250
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        any_province = {
+            clr_province_flag = ei__marked_province
+        }
+    }
+}

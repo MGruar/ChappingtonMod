@@ -1,0 +1,255 @@
+#targetted_decisions = {
+#
+#
+#    exclave_independence_ALL = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.100 }  # mark
+#                character_event = { id = ExclaveIndependence.200 }  # sweep
+#                character_event = { id = ExclaveIndependence.250 }  # clear
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#
+#    exclave_independence_mark = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.100 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#
+#    exclave_independence_sweep = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        allow = {
+#            is_patrician = no
+#            in_revolt = no
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.200 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#    exclave_independence_clear = {
+#
+#        ai_target_filter = self
+#
+#        from_potential = {
+#            ai = no
+#        }
+#
+#        potential = {
+#            is_landed = yes
+#            higher_real_tier_than = BARON
+#        }
+#
+#        effect = {
+#            hidden_tooltip = {
+#                character_event = { id = ExclaveIndependence.250 }
+#            }
+#        }
+#
+#        ai_will_do = {
+#            factor = 0
+#        }
+#
+#    }
+#
+#}
+#
+#
+#decisions = {
+#
+#    ei_all_counts = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = COUNT }  character_event = { id = ExclaveIndependence.1 } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    ei_all_dukes = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = DUKE }  character_event = { id = ExclaveIndependence.1 } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    ei_all_kings = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = KING }  character_event = { id = ExclaveIndependence.1 } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    ei_all_emperors = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = EMPEROR }  character_event = { id = ExclaveIndependence.1 } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    kill_counts = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = COUNT }  death = { death_reason = death_sacrificed } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    kill_dukes = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = DUKE }  death = { death_reason = death_sacrificed } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    kill_kings = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = KING }  death = { death_reason = death_sacrificed } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#    kill_emperors = {
+#        potential = {
+#            ai = no
+#        }
+#        effect = {
+#            any_character = { limit = { tier = EMPEROR }  death = { death_reason = death_sacrificed } }
+#        }
+#        ai_will_do = {
+#            factor = 0
+#        }
+#    }
+#
+#
+##    ei_all_top_down = {
+##        potential = {
+##            ai = no
+##        }
+##        effect = {
+##            any_character = { limit = { tier = EMPEROR }  character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = KING }     character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = DUKE }     character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = COUNT }    character_event = { id = ExclaveIndependence.1 } }
+##        }
+##        ai_will_do = {
+##            factor = 0
+##        }
+##    }
+##
+##    ei_all_bottom_up = {
+##        potential = {
+##            ai = no
+##        }
+##        effect = {
+##            any_character = { limit = { tier = COUNT }    character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = DUKE }     character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = KING }     character_event = { id = ExclaveIndependence.1 } }
+##            any_character = { limit = { tier = EMPEROR }  character_event = { id = ExclaveIndependence.1 } }
+##        }
+##        ai_will_do = {
+##            factor = 0
+##        }
+##    }
+#
+#}

@@ -1,0 +1,23 @@
+ei__sea_connections = {
+    name = "EI__SEA_CONNECTIONS"
+    option = {
+        name = none
+        text = "EI__SEA_CONNECTIONS_NONE"
+        desc = "EI__SEA_CONNECTIONS_NONE_DESC"
+    }
+    option = {
+        name = one_zone
+        text = "EI__SEA_CONNECTIONS_ONE_ZONE"
+        desc = "EI__SEA_CONNECTIONS_ONE_ZONE_DESC"
+    }
+    option = {
+        name = two_zones
+        text = "EI__SEA_CONNECTIONS_TWO_ZONES"
+        desc = "EI__SEA_CONNECTIONS_TWO_ZONES_DESC"
+    }
+    option = {
+        name = all_ports
+        text = "EI__SEA_CONNECTIONS_ALL_PORTS"
+        desc = "EI__SEA_CONNECTIONS_ALL_PORTS_DESC"
+    }
+}

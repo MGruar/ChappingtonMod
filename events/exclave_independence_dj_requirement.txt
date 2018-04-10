@@ -1,0 +1,82 @@
+namespace = ExclaveIndependence
+
+# A less noisy version of vanilla GR.1, used from on_death
+
+# The differences from vanillla GR.1 are:
+# 1. Destruction happens in 'immediate', not in 'option'
+#        Note https://forum.paradoxplaza.com/forum/index.php?threads/2-6-2-kadd-gr-1-should-destroy-title-in-immediate-not-option.971781/
+# 2. Repeats for all titles
+# 3. Skips k_papal_state which cannot be destroyed (this may be important to avoid infinite loops given the repeat)
+# 4. Does not check the game rule. It's important for the mod to function correctly, and it lets you skip the 5 year thing in favor of just death.
+
+character_event = {
+    id = ExclaveIndependence.300
+    desc = EVTDESC_GR_1
+    picture = GFX_evt_throne_room
+
+    is_triggered_only = yes
+
+    only_playable = yes
+
+    trigger = {
+        is_merchant_republic = no
+        any_demesne_title = {
+            higher_tier_than = COUNT
+            is_titular = no
+            is_landless_type_title = no
+            NOT = {
+                ROOT = {
+                    any_realm_title = {
+                        tier = COUNT
+                        any_dejure_liege = { title = PREVPREVPREV }
+                    }
+                }
+            }
+            NOT = {
+                title = k_papal_state
+            }
+        }
+        #has_game_rule = {
+        #    name = de_jure_requirement
+        #    value = required
+        #}
+    }
+
+    immediate = {
+        random_demesne_title = {
+            limit = {
+                higher_tier_than = COUNT
+                is_titular = no
+                is_landless_type_title = no
+                NOT = {
+                    ROOT = {
+                        any_realm_title = {
+                            tier = COUNT
+                            any_dejure_liege = { title = PREVPREVPREV }
+                        }
+                    }
+                }
+                NOT = {
+                    title = k_papal_state
+                }
+            }
+
+            # Destroy the title
+            destroy_landed_title = THIS
+            add_claim = ROOT
+
+            # Destroy another title
+            ROOT = {
+                repeat_event = { id = ExclaveIndependence.300 }
+            }
+
+            # Used in localization of option EVTOPTA_GR_1
+            # We do this last so it's not clobbered by the recursion
+            save_event_target_as = title_to_destroy
+        }
+    }
+
+    option = {
+        name = EVTOPTA_GR_1
+    }
+}
