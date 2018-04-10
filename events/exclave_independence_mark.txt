@@ -17,16 +17,6 @@ character_event = {
 
         save_event_target_as = dying_ruler
 
-        if = {
-            limit = { has_game_rule = { name = ei__sea_connections  value = one_zone } }
-            log = "rule one_zone"
-        }
-
-        if = {
-            limit = { has_game_rule = { name = ei__sea_connections  value = two_zones } }
-            log = "rule two_zones"
-        }
-
         # First, mark all counties within our top titles.
         # (Only provinces we actually control will be traced.)
         # I considered doing all held titles (e.g. the Pope can use d_latium at the CM start) but that seems too easy to game.
@@ -109,76 +99,31 @@ province_event = {
                 #log = "/Direct land connection from [Root.GetName] to [This.GetName]"
             }
 
-            # Trace through limited number of sea connections, depending on game rules
-            # This code would be faster, but doesn't work. I guess any_neighbor_province skip sea zones when used as an effect??
-            #if = {
-            #    limit = {
-            #        OR = {
-            #            has_game_rule = { name = ei__sea_connections  value = one_zone }
-            #            has_game_rule = { name = ei__sea_connections  value = two_zones }
-            #        }
-            #        port = yes
-            #    }
-            #    log = "Begin tracing through limited sea zones from [Root.GetName]"
-            #    any_neighbor_province = {  # first sea zone
-            #        if = {
-            #            limit = { is_land = no }
-            #            log = "Trace through first sea zone..."
-            #            log = "Trace through first sea zone: [This.GetName]"
-            #            any_neighbor_province = {
-            #                limit = { has_owner = yes }
-            #                province_event = { id = ExclaveIndependence.101 }
-            #            }
-            #            if = {
-            #                limit = { has_game_rule = { name = ei__sea_connections  value = two_zones } }
-            #                any_neighbor_province = {  # second sea zone
-            #                    if = {
-            #                        limit = { is_land = no }
-            #                        log = "Trace through second sea zone: [This.GetName]"
-            #                        any_neighbor_province = {
-            #                            limit = { has_owner = yes }
-            #                            province_event = { id = ExclaveIndependence.101 }
-            #                        }
-            #                    }
-            #                }
-            #            }
-            #        }
-            #    }
-            #}
-
-            ## Trace through limited number of sea connections, depending on game rules
+            ## Trace through limited number of land connections
             if = {
                 limit = {
-                    OR = {
-                        has_game_rule = { name = ei__sea_connections  value = one_zone }
-                        has_game_rule = { name = ei__sea_connections  value = two_zones }
-                    }
-                    port = yes
+                    is_land = yes
                 }
-                log = "Reverse sea connections from [Root.GetName]:"
+                log = "Reverse land connections from [Root.GetName]:"
                 any_province = {  # new land province to include
                     limit = {
                         is_land = yes
-                        port = yes
-                        OR {
+                        OR = {
                             any_neighbor_province = {
-                                is_land = no
+                                is_land = yes
                                 any_neighbor_province = {
                                     province = ROOT
                                 }
                             }
-                            AND = {
-                                has_game_rule = { name = ei__sea_connections  value = two_zones }
-                                any_neighbor_province = {
-                                    is_land = no
-                                    any_neighbor_province = {
-                                        is_land = no
-                                        any_neighbor_province = {
-                                            province = ROOT
-                                        }
-                                    }
-                                }
-                            }
+							any_neighbor_province = {
+								is_land = yes
+								any_neighbor_province = {
+									is_land = yes
+									any_neighbor_province = {
+										province = ROOT
+									}
+								}
+							}
                         }
                     }
                     province_event = { id = ExclaveIndependence.101 }
@@ -189,7 +134,6 @@ province_event = {
             # Trace through all ports, depending on game rules
             if = {
                 limit = {
-                    has_game_rule = { name = ei__sea_connections  value = all_ports }
                     port = yes
                 }
                 #log = "Tracing through all ports:"

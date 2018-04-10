@@ -6,19 +6,3 @@ ExclaveIndependence.201.desc;My realm was not connected to my liege's de jure la
 ExclaveIndependence.201.indep;Become independent;;;;;;;;;x
 ExclaveIndependence.201.higher_liege;Serve [Root.Liege.Liege.GetTitledName] directly;;;;;;;;;x
 ExclaveIndependence.201.stay;Stay;;;;;;;;;x
-
-# Game rules
-
-EI__SEA_CONNECTIONS;§KExclave Independence§!: Sea Connections;;;;;;;;;x
-EI__SEA_CONNECTIONS_NONE;None;;;;;;;;;x
-EI__SEA_CONNECTIONS_NONE_DESC;Non-de-jure territory must be connected by land in order to remain part of the realm after the ruler dies.;;;;;;;;;x
-EI__SEA_CONNECTIONS_ONE_ZONE;One sea zone;;;;;;;;;x
-EI__SEA_CONNECTIONS_ONE_ZONE_DESC;Territory can be connected through one sea zone.;;;;;;;;;x
-EI__SEA_CONNECTIONS_TWO_ZONES;Two sea zones;;;;;;;;;x
-EI__SEA_CONNECTIONS_TWO_ZONES_DESC;Territory can be connected through up to two sea zones.;;;;;;;;;x
-EI__SEA_CONNECTIONS_ALL_PORTS;All ports;;;;;;;;;x
-EI__SEA_CONNECTIONS_ALL_PORTS_DESC;All coastal provinces are considered connected to each other. Only inland exclaves are at risk of breaking off.;;;;;;;;;x
-
-# Hints regarding sea zone game rules?
-# , allowing limited island-hopping
-# , allowing extensive island-hopping
