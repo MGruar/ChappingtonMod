@@ -108,23 +108,12 @@ province_event = {
                 any_province = {  # new land province to include
                     limit = {
                         is_land = yes
-                        OR = {
-                            any_neighbor_province = {
-                                is_land = yes
-                                any_neighbor_province = {
-                                    province = ROOT
-                                }
-                            }
+						any_neighbor_province = {
+							is_land = yes
 							any_neighbor_province = {
-								is_land = yes
-								any_neighbor_province = {
-									is_land = yes
-									any_neighbor_province = {
-										province = ROOT
-									}
-								}
+								province = ROOT
 							}
-                        }
+						}
                     }
                     province_event = { id = ExclaveIndependence.101 }
                 }
