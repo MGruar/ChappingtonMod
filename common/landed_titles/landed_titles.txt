@@ -34300,7 +34300,7 @@ e_abyssinia = {
 }
 
 e_britannia = {
-	color={ 172 22 22 }
+	color={ 98 52 158 } # Orig 172 22 22, changed for Chronicles
 	color2={ 255 255 255 }
 	capital = 32 # Middlesex
 	
