@@ -1,8 +1,0 @@
-#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
-
-# Events
-
-ExclaveIndependence.201.desc;My realm was not connected to my liege's de jure lands. With [From.GetHerHis] death, I have an opportunity to become independent.;;;;;;;;;x
-ExclaveIndependence.201.indep;Become independent;;;;;;;;;x
-ExclaveIndependence.201.higher_liege;Serve [Root.Liege.Liege.GetTitledName] directly;;;;;;;;;x
-ExclaveIndependence.201.stay;Stay;;;;;;;;;x
